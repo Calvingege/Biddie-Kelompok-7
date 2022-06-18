@@ -28,6 +28,7 @@
     @foreach ($Bid as $Bid)
         <tr>
             <td>{{$Bid->NamaBarang}}</td>
+            <td>{{$Bid->created_at}}</td>
             <td>{{$Bid->HargaLelang}}</td>
         </tr>
         @endforeach

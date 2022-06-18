@@ -105,28 +105,16 @@
 @csrf
 <div class="mb-3">
 <!-- Tampilin Saldonya -->
+<?php
+    use Carbon\Carbon;
+    $time = Carbon::now();
+    echo "Terakhir Login: $time";
+    ?>
 <a>Jumlah Saldo: {{$Saldo}}</a>
 
 <h1>Menu Lelang</h1>
 <div class="wrapper">
 @foreach ($Adds as $Adds)
-<!-- Bikin countdownnya -->
-<?php
-    $date = Carbon::now();
-    $to = \Carbon\Carbon::parse($date);
-    $from = \Carbon\Carbon::parse($item->End_date);
-    $TimeLeft = $to->diffInHours($from);
-?>
-<div
-    @if(@TimeLeft > 24)
-        class="product-reg"
-    @elseif($TimeLeft < 0)
-        class="product-exp"
-    @else
-        class="product-under"
-    @endif
-    </div>
-
 <!-- Show nama barang nya disini -->
 <!-- <th scope="row"><a href="{{route('ShowAdds', $Adds->id)}}">{{$Adds->KategoriBarang}}</a></th> -->
 <a><img src="{{asset('storage/image/' .$Adds->FotoBarang)}}" alt="FotoBarang" width="300" 
@@ -134,6 +122,12 @@
 <a>Nama: {{$Adds->NamaBarang}}</a>
 <a>Harga Limit: {{$Adds->HargaLimit}}</a>
 <br>
+<?php
+    $date = Carbon::now();
+    $to = \Carbon\Carbon::parse($date);
+    // $from = \Carbon\Carbon::parse($item->End_date);
+    // $TimeLeft = $to->diffInHours($from);
+?>
 @endforeach
 </div>
 
