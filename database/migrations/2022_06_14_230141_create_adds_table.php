@@ -18,6 +18,7 @@ class CreateAddsTable extends Migration
             $table->timestamps();
             $table->string('NamaBarang');
             $table->string('HargaLimit');
+            $table->string('time_end');
             $table->string('FotoBarang');
         });
     }

@@ -72,9 +72,9 @@
             </ul>
           </div>
             
-          <div class="profile">
+          <!-- <div class="profile">
             <a href="/dashboard"><img src="/assets/profile.svg" alt=""></a>
-          </div>
+          </div> -->
           
     </div>
 
@@ -89,6 +89,11 @@
         <div class="mb-3">
           <label for="HargaLimit" class="form-label">Harga Limit</label>
           <input type="text" class="form-control" id="HargaLimit" name="HargaLimit">
+        </div>
+        
+        <div class="mb-3">
+          <label for="time_end" class="form-label">Time End</label>
+          <input type="text" class="form-control" id="time_end" name="time_end">
         </div>
 
         <div class="mb-3">

@@ -1,8 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <!-- <a href="/"> -->
+            <img src="assets/Biddie.png" class="w-70 h-20 fill-current text-gray-500 alt="FotoBeedie">
             </a>
         </x-slot>
 

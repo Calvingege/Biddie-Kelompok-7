@@ -13,6 +13,7 @@ class Adds extends Model
         'NamaBarang',
         'HargaLimit',
         'FotoBarang',
+        'time_end',
         'HargaLelang'
     ];
 }

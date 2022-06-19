@@ -78,7 +78,38 @@
         padding-left: 88px;
     }
         </style>
-    
+
+    <!-- Bikin Script diatas dulu -->
+    <script>
+    function timer_count(id, end){
+        //  Set the date we are aounting down to
+        var count_id = end;
+        var countDownDate = new Date(count_id).getTime();
+
+        // Update the count down every 1 seccond 
+        var x = setInterval(function(){
+            // get today's date and time
+        var now = new Date().getTime();
+        // Find the distance between now and the count down 
+        var distance = countDownDate - now;
+        // Time calculations for day, hours, minutes and seconds
+        var days = Math.floor(distance/(1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance%(1000*60*60*24))/(1000*68*68));
+        var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+        var seconds = Math.floor((distance%(1000*60))/1000);
+        // Output the result in an elemet with id="demo"
+        document.getElementById(id).innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+        // If the count down over, write some text
+        if(distance<0) {
+            clearInterval(x);
+            // dapatin id generik dari $Adds di php blade
+            // var id="13";
+            document.getElementById(id).innerHTML="Waktu Habis";
+        }
+        },1000);
+    }
+</script>
+
     </head>
     <body>
     <div id="navbar">
@@ -89,15 +120,16 @@
           <div>
             <ul>
             <a href="/home"><li>Home</li></a>
+            <a href="/create/saldo"><li>Isi Saldo</li></a>
             <a href="/create/bid"><li>Buy Item</li></a>
             <a href="/create/adds"><li>Sell Item</li></a>
             <a href="/about"><li>about us</li></a>
             </ul>
           </div>
             
-          <div class="profile">
+          <!-- <div class="profile">
             <a href="/dashboard"><img src="/assets/profile.svg" alt=""></a>
-          </div>
+          </div> -->
           
     </div>
 
@@ -111,23 +143,37 @@
     echo "Terakhir Login: $time";
     ?>
 <a>Jumlah Saldo: {{$Saldo}}</a>
-
 <h1>Menu Lelang</h1>
+</div>
 <div class="wrapper">
 @foreach ($Adds as $Adds)
 <!-- Show nama barang nya disini -->
 <!-- <th scope="row"><a href="{{route('ShowAdds', $Adds->id)}}">{{$Adds->KategoriBarang}}</a></th> -->
 <a><img src="{{asset('storage/image/' .$Adds->FotoBarang)}}" alt="FotoBarang" width="300" 
      height="200"></a>
-<a>Nama: {{$Adds->NamaBarang}}</a>
-<a>Harga Limit: {{$Adds->HargaLimit}}</a>
-<br>
+<a><p>Nama: {{$Adds->NamaBarang}}</p></a>
+<a><p>Harga Limit: {{$Adds->HargaLimit}}</p></a>
+<a><p>Batas Waktu: </p></a>
 <?php
-    $date = Carbon::now();
-    $to = \Carbon\Carbon::parse($date);
-    // $from = \Carbon\Carbon::parse($item->End_date);
-    // $TimeLeft = $to->diffInHours($from);
-?>
+    $date = date("Y/m/d");
+    // bagian insert waktu sesuai dengan DB yang customer insert
+    // $time = date('22:45:00');
+    // $time = Adds::all('time_end');
+    $time = date($Adds->time_end);
+    $date_today = $date . ' ' . $time;
+    ?>
+    
+    <script type="text/javascript">
+    timer_count('demo-<?php echo $Adds->id; ?>', "<?php echo $date_today; ?>");
+    </script>
+    <?php 
+    // idnya bikin generik id="demo-13"
+    $id = $Adds->id;
+    echo "<p id='demo-$id' style='font-size: 25px;'</p>";
+    ?>
+    <pre>{{$Adds->time}} {{$Adds->time_end}}</pre>
+    <!-- - {{$Adds->time_end}} -->
+    <br>
 @endforeach
 </div>
 

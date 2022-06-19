@@ -19,12 +19,14 @@ class AddsController extends Controller
 
         $request->validate([
             'FotoBarang' => 'required|image|mimes:jpg,png,jpeg,gif,svg',
+            'time_end' => 'date_format:H:i:s',
             'HargaLimit' => 'required|numeric'
         ]);
 
         Adds::create([
             'NamaBarang' => $request->NamaBarang,
             'HargaLimit' => $request->HargaLimit,
+            'time_end' => $request->time_end,
             'FotoBarang' => $fileName
         ]);
 

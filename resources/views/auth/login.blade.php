@@ -1,8 +1,9 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <!-- <a href="/"> -->
+                <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> -->
+                <img src="assets/Biddie.png" class="w-70 h-20 fill-current text-gray-500 alt="FotoBeedie">
             </a>
         </x-slot>
 
@@ -39,6 +40,12 @@
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
+
+            <div class="flex items-center justify-end mt-4">
+                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                        {{ __('register here') }}
+                     </a>
+                </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))

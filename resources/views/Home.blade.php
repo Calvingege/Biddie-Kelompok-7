@@ -95,10 +95,6 @@
             </ul>
           </div>
             
-          <div class="profile">
-            <a href="/dashboard"><img src="/assets/profile.svg" alt=""></a>
-          </div>
-          
     </div>
     <div id="picture-selection">
         <img src="/assets/shopping.png" alt="" style="width: 100%; height: 300px" class="floatRight">
