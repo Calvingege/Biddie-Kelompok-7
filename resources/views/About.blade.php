@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
 
@@ -58,25 +59,15 @@
     }
     
     #hero-section{
-        height: 70vh;
+        height: 50vh;
         background-color: white;
         background-size: cover;
         /* background-repeat: ; */
         display: flex;  
         justify-content: center;
         flex-direction: column;
-        padding-left: 200px;
-    }
-    
-    #picture-selection{
-        float: right;
-        padding: 10px;
-        padding-top: 120px;
-        padding-right: 250px;
-    }
-    
-    #pre-selection{
-        padding-left: 88px;
+        padding-left: 3px;
+        font-size: 18px;
     }
         </style>
     
@@ -95,10 +86,6 @@
             <a href="/about"><li>about us</li></a>
             </ul>
           </div>
-            
-          <div class="profile">
-            <a href="/dashboard"><img src="/assets/profile.svg" alt=""></a>
-          </div>
           
     </div>
     <!-- <div id="picture-selection">
@@ -107,22 +94,19 @@
     </div>   -->
 
     <div id="hero-section">
+        <h2>About Us</h2>
+        <p>
+		Biddie adalah platform lelang yang dilakukan secara online, menggunakan rekening bersama sehingga menjamin transaksi secara aman. Selain itu Biddie menggunakan sistem lelang tanpa uang muka.
         <br>
         <br>
+        Sistem lelang menggunakan rekening bersama sehingga menjamin keamanan transaksi
+        sebagian besar orang yang masih takut untuk mengikuti lelang secara online dikarenakan belum ada platform khusus di Indonesia yang menyediakan lelang.
         <br>
         <br>
-        <p align="justify">
-		ONLINE AUCTION adalah balai lelang yang melelang produk-produk otomotif seperti kendaraan roda dua dan roda empat, namun saat ini kami juga telah melelang barang-barang non-otomotif seperti gadget dan alat berat. ONLINE AUCTION berdiri sejak tahun 2007 yang merupakan perusahaan patungan dari investor luar dan dalam negeri.
-		<br><br>
-		Siapapun dapat berpartisipasi menjadi peserta lelang, baik perusahaan atau perorangan, dari pembelian skala besar hingga pembelian secara satuan.
-		<br><br>
-		ONLINE AUCTION mengadakan lelang secara rutin setiap minggunya di 10 cabang yang tersebar di Indonesia. Selain itu ONLINE AUCTION juga sudah mengadakan lelang di lebih dari 30 kota di Indonesia. Hingga akhir 2016, lebih dari 27.000 kendaraan roda empat telah terjual dan terdapat lebih dari 500 event lelang dapat diselenggarakan ONLINE AUCTION setiap tahunnya.
-		<br><br>
-		Anda tidak hanya dapat berpartisipasi di lelang untuk membeli kendaraan, namun ONLINE AUCTION juga bisa menjadi solusi penjualan untuk mitra perusahaan yang ingin menjual aset kendaraan mereka. Tidak hanya untuk perusahaan, sebagai perorangan Anda juga dapat menitipkan kendaraan untuk dijual melalui lelang ONLINE AUCTION.
+        Dalam platform kami, semua pengguna bisa melakukan lelang barang apa saja asalkan barang tersebut bersifat legal untuk diperjual belikan. Seperti pakaian, mainan, barang elektronik, kendaraan, dan lain-lain.
 		</p>
 		
     </div>
-	
-
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
